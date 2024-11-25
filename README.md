@@ -22,9 +22,34 @@ func new -l Custom -t HttpTrigger -n HttpExample -a anonymous
   }
 }
 ```
+
 2) Set the Custom Handler path & Turn on Forwarding
 
+`local.settings.json`
 ```
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
+    }
+  },
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "[4.*, 5.0.0)"
+  },
+  "customHandler": {
+    "description": {
+      "defaultExecutablePath": "server",
+      "workingDirectory": "",
+      "arguments": []
+    },
+    "enableForwardingHttpRequest": true
+  }
+}
 ```
 
 ## Deploy to Azure: 
