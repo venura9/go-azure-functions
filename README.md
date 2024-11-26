@@ -1,5 +1,12 @@
 # Azure Functions with Go
 
+## Build and run 
+
+```bash
+go build server.go
+./server
+```
+
 ## Run the function locally
 
 ```bash
@@ -25,8 +32,8 @@ func new -l Custom -t HttpTrigger -n HttpExample -a anonymous
 
 2) Set the Custom Handler path & Turn on Forwarding
 
-`host.json`
-```json
+`local.settings.json`
+```
 {
   "version": "2.0",
   "logging": {
