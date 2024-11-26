@@ -32,7 +32,7 @@ func new -l Custom -t HttpTrigger -n HttpExample -a anonymous
 
 2) Set the Custom Handler path & Turn on Forwarding
 
-`local.settings.json`
+`host.json`
 ```
 {
   "version": "2.0",
